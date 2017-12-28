@@ -21,9 +21,7 @@ var gridBox = [gridA, gridB, gridC, gridD, gridE, gridF, gridG, gridH, gridI];
 function testMe() {
 
     givenValues = [];
-    possibleValues = [
-        [1,2,3,4,5,6,7,8,9]
-    ];
+    possibleValues = [];
     //getAllColumnValues();
     getOneColumnValue();
     console.log('givenValues:'+ givenValues);
@@ -51,7 +49,7 @@ function getOneColumnValue() {
 
 function getOneColumnPossibleValues() {
 
-    thesePossibleValues = possibleValues[0];
+    thesePossibleValues = [1,2,3,4,5,6,7,8,9];
 
     for (i = 1; i <= 9; i++) {
         if (givenValues.includes(i) === true) {
@@ -62,5 +60,6 @@ function getOneColumnPossibleValues() {
             }
         }
     }
-    return thesePossibleValues.sort();
+    thesePossibleValues.sort();
+    possibleValues.push(thesePossibleValues);
 }
