@@ -41,8 +41,7 @@ function getOneColumnValue() {
     column.forEach(function(e) {
         givenValues.push(+e.innerHTML.trim());
     });
-
-    givenValues.sort();
+    return givenValues.sort();
 }
 
 
