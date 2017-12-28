@@ -4,7 +4,7 @@ function testMe() {
     getOneColumnValue();
     //getAllColumnValues();
 
-}function getOneColumnValue(row) {
+}
 
 function getAllColumnValues() {
     const row = document.querySelectorAll('.row');
@@ -13,6 +13,7 @@ function getAllColumnValues() {
     });
 }
 
+function getOneColumnValue(row) {
     const row = document.querySelector('.row');
     const column = row.querySelectorAll('.column');
 
