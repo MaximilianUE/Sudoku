@@ -33,9 +33,14 @@ function getAllColumnValues() {
     });
 }
 
-function getOneColumnValue(row) {
+function getOneColumnValue() {
+//function getOneColumnValue(row) {
+    const row = document.querySelector('.row');
     const column = row.querySelectorAll('.column');
 
     column.forEach(function(e) {
         givenValues.push(+e.innerHTML.trim());
     });
+
+    givenValues.sort();
+}
