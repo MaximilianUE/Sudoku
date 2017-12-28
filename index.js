@@ -37,5 +37,5 @@ function getOneColumnValue(row) {
     const column = row.querySelectorAll('.column');
 
     column.forEach(function(e) {
-        arr.push(e.innerHTML.trim());
+        givenValues.push(+e.innerHTML.trim());
     });
