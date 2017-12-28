@@ -20,9 +20,10 @@ var gridBox = [gridA, gridB, gridC, gridD, gridE, gridF, gridG, gridH, gridI];
 
 function testMe() {
 
-    arr = [];
-    getAllColumnValues();
-    console.log(arr);
+    givenValues = [];
+    //getAllColumnValues();
+    getOneColumnValue();
+    getOneColumnPossibleValues();
 }
 
 function getAllColumnValues() {
