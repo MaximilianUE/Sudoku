@@ -49,18 +49,8 @@ function getOneColumnValue() {
     return givenValues.sort();
 }
 
-
 function getOneColumnPossibleValues() {
 
-    console.log('givenValues:'+ givenValues);
-
-    var possibleValues = [1,2,3,7,22];
-
-    /*
-    possibleValues = possibleValues.filter( function( el ) {
-        return givenValues.indexOf( el ) < 0;
-    } );
-    */
 
     for (i = 1; i <= 9; i++) {
         if (givenValues.includes(i) === true) {
