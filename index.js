@@ -21,9 +21,14 @@ var gridBox = [gridA, gridB, gridC, gridD, gridE, gridF, gridG, gridH, gridI];
 function testMe() {
 
     givenValues = [];
+    possibleValues = [
+        [1,2,3,4,5,6,7,8,9]
+    ];
     //getAllColumnValues();
     getOneColumnValue();
+    console.log('givenValues:'+ givenValues);
     getOneColumnPossibleValues();
+    console.log("possibleValues:" + possibleValues);
 }
 
 function getAllColumnValues() {
