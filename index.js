@@ -59,10 +59,12 @@ function getOneColumnPossibleValues() {
     */
 
     for (i = 1; i <= 9; i++) {
-        if (givenValues.includes(i) === false) {
+        if (givenValues.includes(i) === true) {
             const remove = possibleValues.indexOf(i);
-            console.log(remove);
-            possibleValues.splice(remove);
+            
+            if (remove !== -1) {
+                possibleValues.splice(remove, 1);
+            }
         }
     }
 
