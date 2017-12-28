@@ -44,3 +44,28 @@ function getOneColumnValue() {
 
     givenValues.sort();
 }
+
+
+function getOneColumnPossibleValues() {
+
+    console.log('givenValues:'+ givenValues);
+
+    var possibleValues = [1,2,3,7,22];
+
+    /*
+    possibleValues = possibleValues.filter( function( el ) {
+        return givenValues.indexOf( el ) < 0;
+    } );
+    */
+
+    for (i = 1; i <= 9; i++) {
+        if (givenValues.includes(i) === false) {
+            const remove = possibleValues.indexOf(i);
+            console.log(remove);
+            possibleValues.splice(remove);
+        }
+    }
+
+    console.log("possibleValues:" + possibleValues);
+    return possibleValues;
+}
