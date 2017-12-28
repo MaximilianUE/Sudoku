@@ -51,17 +51,16 @@ function getOneColumnValue() {
 
 function getOneColumnPossibleValues() {
 
+    thesePossibleValues = possibleValues[0];
 
     for (i = 1; i <= 9; i++) {
         if (givenValues.includes(i) === true) {
-            const remove = possibleValues.indexOf(i);
+            const remove = thesePossibleValues.indexOf(i);
             
             if (remove !== -1) {
-                possibleValues.splice(remove, 1);
+                thesePossibleValues.splice(remove, 1);
             }
         }
     }
-
-    console.log("possibleValues:" + possibleValues);
-    return possibleValues;
+    return thesePossibleValues.sort();
 }
