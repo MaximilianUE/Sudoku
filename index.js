@@ -24,16 +24,17 @@ function columns_GetAllValues() {
     const row = document.querySelectorAll('.row');
 
     for(i = 0; i < row.length; i++) {
-        columns_GetOneColumnValue(row[i])
+        columns_GetOneGivenValue(row[i]);
+        columns_GetOnePossibleValue(row[i]);
     }
 }
 
-function columns_GetOneColumnValue(row) {
+function columns_GetOneGivenValue(row) {
     const column = row.querySelectorAll('.column');
     var column_GivenValues = [];
 
     column.forEach(function(e) {
-        column_GivenValues.push(e.innerHTML.trim());
+        column_GivenValues.push(+e.innerHTML.trim());
     });
     column_GivenValues.sort();
     columns_GivenValues[i].push(column_GivenValues);
