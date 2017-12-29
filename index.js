@@ -44,15 +44,15 @@ function getAllColumnValues() {
     }
 }
 
-function getOneColumnValue() {
-//function getOneColumnValue(row) {
-    const row = document.querySelector('.row');
+function getOneColumnValue(row) {
     const column = row.querySelectorAll('.column');
+    var theseGivenValues = [];
 
     column.forEach(function(e) {
-        givenValues.push(+e.innerHTML.trim());
+        theseGivenValues.push(e.innerHTML.trim());
     });
-    return givenValues.sort();
+    theseGivenValues.sort();
+    givenValues[i].push(theseGivenValues);
 }
 
 function getOneColumnPossibleValues() {
