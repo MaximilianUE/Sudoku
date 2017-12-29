@@ -1,43 +1,41 @@
 
 function main() {
 
-    givenValues = [
-        [],[],[],
-        [],[],[],
-        [],[],[]
-    ];
-    
-    possibleValues = [
+    columns_GivenValues = [
         [],[],[],
         [],[],[],
         [],[],[]
     ];
 
-    getAllColumnValues();
+    columns_possibleValues = [
+        [],[],[],
+        [],[],[],
+        [],[],[]
+    ];
 
-    console.log('givenValues:');
-    console.log(givenValues);
+    columns_GetAllValues();
+
+    console.log(columns_GivenValues);
 }
 
-function getAllColumnValues() {
+function columns_GetAllValues() {
     const row = document.querySelectorAll('.row');
 
     for(i = 0; i < row.length; i++) {
-        getOneColumnValue(row[i])
+        columns_GetOneColumnValue(row[i])
     }
 }
 
-function getOneColumnValue(row) {
+function columns_GetOneColumnValue(row) {
     const column = row.querySelectorAll('.column');
-    var theseGivenValues = [];
+    var column_GivenValues = [];
 
     column.forEach(function(e) {
-        theseGivenValues.push(e.innerHTML.trim());
+        column_GivenValues.push(e.innerHTML.trim());
     });
-    theseGivenValues.sort();
-    givenValues[i].push(theseGivenValues);
+    column_GivenValues.sort();
+    columns_GivenValues[i].push(column_GivenValues);
 }
-
 
 
 function getOneColumnPossibleValues() {
