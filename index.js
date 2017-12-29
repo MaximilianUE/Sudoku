@@ -40,17 +40,30 @@ function columns_GetOneColumnValue(row) {
 }
 
 
-function getOneColumnPossibleValues() {
+function columns_GetOnePossibleValue() {
 
-    thesePossibleValues = [1,2,3,4,5,6,7,8,9];
+    var column_PossibleValues = [1,2,3,4,5,6,7,8,9];
 
-    for (i = 1; i <= 9; i++) {
-        if (givenValues.includes(i) === true) {
-            const remove = thesePossibleValues.indexOf(i);
-            
+    for (t = 1; t <= 9; t++) {
+
+        if (columns_GivenValues[i][0].includes(t)) {
+
+            const remove = column_PossibleValues.indexOf(t);
             if (remove !== -1) {
-                thesePossibleValues.splice(remove, 1);
+                column_PossibleValues.splice(remove, 1);
             }
+
+
+            /*if (columns_GivenValues[i][0].includes(t) === true) {
+                /*
+                const remove = column_PossibleValues.indexOf(t);
+
+                if (remove !== -1) {
+                    column_PossibleValues.splice(remove, 1);
+                }
+
+            }
+            */
         }
     }
     column_PossibleValues.sort();
