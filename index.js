@@ -7,7 +7,7 @@ function main() {
         [],[],[]
     ];
 
-    columns_possibleValues = [
+    columns_PossibleValues = [
         [],[],[],
         [],[],[],
         [],[],[]
@@ -51,6 +51,6 @@ function getOneColumnPossibleValues() {
             }
         }
     }
-    thesePossibleValues.sort();
-    possibleValues.push(thesePossibleValues);
+    column_PossibleValues.sort();
+    columns_PossibleValues[i].push(column_PossibleValues);
 }
