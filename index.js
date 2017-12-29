@@ -34,9 +34,14 @@ function testMe() {
 
 function getAllColumnValues() {
     const row = document.querySelectorAll('.row');
+    /*
     row.forEach(function(row) {
         getOneColumnValue(row);
     });
+    */
+    for(i = 0; i < row.length; i++) {
+        getOneColumnValue(row[i])
+    }
 }
 
 function getOneColumnValue() {
