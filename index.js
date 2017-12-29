@@ -18,7 +18,7 @@ var gridI = [1,2,3,4,5,6,7,8,9];
 
 var gridBox = [gridA, gridB, gridC, gridD, gridE, gridF, gridG, gridH, gridI];
 
-function testMe() {
+function main() {
 
     givenValues = [
         [],[],[],
