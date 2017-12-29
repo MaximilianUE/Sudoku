@@ -20,7 +20,11 @@ var gridBox = [gridA, gridB, gridC, gridD, gridE, gridF, gridG, gridH, gridI];
 
 function testMe() {
 
-    givenValues = [];
+    givenValues = [
+        [],[],[],
+        [],[],[],
+        [],[],[]
+    ];
     possibleValues = [];
     //getAllColumnValues();
     getOneColumnValue();
