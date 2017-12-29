@@ -14,8 +14,10 @@ function main() {
     ];
 
     columns_GetAllValues();
-
-    console.log(columns_GivenValues);
+    console.log("-----------------------");
+    console.log("result");
+    console.log(columns_PossibleValues);
+    console.log("-----------------------");
 }
 
 function columns_GetAllValues() {
