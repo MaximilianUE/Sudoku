@@ -27,10 +27,9 @@ function testMe() {
     ];
     possibleValues = [];
     //getAllColumnValues();
-    getOneColumnValue();
-    console.log('givenValues:'+ givenValues);
-    getOneColumnPossibleValues();
-    console.log("possibleValues:" + possibleValues);
+    getAllColumnValues();
+    console.log('givenValues:');
+    console.log(givenValues);
 }
 
 function getAllColumnValues() {
