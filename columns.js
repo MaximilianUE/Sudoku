@@ -2,7 +2,7 @@
  * this section covers a single column
  *
  * GIVEN: COLUMN INDEX
- * WANT: ALL COLUMN POSSIBLE VALUES
+ * WANT: ALL POSSIBLE VALUES FOR THIS COLUMN INDEX
  **/
 
 let column_PossibleValues = [];
@@ -27,8 +27,8 @@ function column_GetAllValues() {
 
     column_GetAllPossibleValues();
 
-    //test
-    console.log(column_PossibleValues);
+    //output
+    return column_PossibleValues;
 }
 
 /** GIVEN: column_GivenValues
