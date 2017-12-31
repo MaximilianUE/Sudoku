@@ -7,10 +7,7 @@
 
 let grid_PossibleValues = [];
 
-//input [var btwn 1 and grid-size(9)]
-var gridIndex = 1;
-
-function grid_GetAllValues() {
+function grid_GetAllValues(gridIndex) {
 
     grid_GivenValues = [];
 

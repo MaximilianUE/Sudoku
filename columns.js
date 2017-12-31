@@ -7,10 +7,7 @@
 
 let column_PossibleValues = [];
 
-//input [var btwn 1 and grid-size(9)]
-var columnIndex = 2;
-
-function column_GetAllValues() {
+function column_GetAllValues(columnIndex) {
 
     column_GivenValues = [];
 
