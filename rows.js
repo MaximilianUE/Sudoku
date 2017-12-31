@@ -15,7 +15,7 @@ function row_GetAllValues() {
     row_GivenValues = [];
 
     //check this one
-    const row = document.querySelectorAll(`.column[data-row="${rowIndex}"]`);
+    const row = document.querySelectorAll(`.field[data-row="${rowIndex}"]`);
 
     //loop
     for(i = 0; i < row.length; i++) {

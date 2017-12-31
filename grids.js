@@ -15,7 +15,7 @@ function grid_GetAllValues() {
     grid_GivenValues = [];
 
     //check this one
-    const grid = document.querySelectorAll(`.column[data-grid="${gridIndex}"]`);
+    const grid = document.querySelectorAll(`.field[data-grid="${gridIndex}"]`);
 
     //loop
     for(i = 0; i < grid.length; i++) {

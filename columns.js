@@ -15,7 +15,7 @@ function column_GetAllValues() {
     column_GivenValues = [];
 
     //check this one
-    const column = document.querySelectorAll(`.column[data-column="${columnIndex}"]`);
+    const column = document.querySelectorAll(`.field[data-column="${columnIndex}"]`);
 
     //loop
     for(i = 0; i < column.length; i++) {
