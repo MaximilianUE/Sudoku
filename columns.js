@@ -1,22 +1,18 @@
+/**
+ * this section covers a single column
+ *
+ * GIVEN: COLUMN INDEX
+ * WANT: ALL COLUMN POSSIBLE VALUES
+ **/
 
 let column_PossibleValues = [];
 
-/**
- * this section covers the columns
- **/
-
-/**
- * GIVEN: ROW INDEX
- * WANT: ALL COLUMN VALUES
- * HAVE:
- */
+//input [var btwn 1 and grid-size(9)]
+var columnIndex = 2;
 
 function column_GetAllValues() {
 
     column_GivenValues = [];
-
-    //input
-    const columnIndex = 2;
 
     //check this one
     const column = document.querySelectorAll(`.column[data-column="${columnIndex}"]`);
@@ -28,6 +24,16 @@ function column_GetAllValues() {
 
     //cleanup
     column_GivenValues.sort();
+
+    column_GetAllPossibleValues();
+
+    //test
+    console.log(column_PossibleValues);
+}
+
+/** GIVEN: column_GivenValues
+*   WANT: column_PossibleValues **/
+function column_GetAllPossibleValues() {
 
     //default check values
     column_PossibleValues = [1,2,3,4,5,6,7,8,9];
@@ -43,8 +49,6 @@ function column_GetAllValues() {
         }
     }
 
-    console.log(column_PossibleValues);
+    //output
     return column_PossibleValues;
-
 }
-
