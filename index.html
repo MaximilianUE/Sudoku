@@ -7,42 +7,151 @@
     <script type="text/javascript" src="columns.js"> </script>
     <script type="text/javascript" src="index.js" defer> </script>
 </head>
+<style>
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    table th {
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        word-break: normal;
+        width: 30px;
+        height: 30px;
+        border-color: #aaa;
+    }
+
+    table tr.border-top {
+        border-style: solid;
+        border-width: 1px;
+        border-top-width: 3px;
+        border-top-color: black;
+    }
+
+    table th.border-left {
+        border-style: solid;
+        border-width: 1px;
+        border-left-width: 3px;
+        border-left-color: black;
+    }
+
+    button {
+        margin-top: 15px;
+    }
+
+
+
+</style>
 <body>
 
     <table>
         <tr class="row">
-            <th class="column" data-column="1"> 1 </th>
-            <th class="column" data-column="2"> 2 </th>
-            <th class="column" data-column="3"> 3 </th>
-            <th class="column" data-column="4"> 4 </th>
-            <th class="column" data-column="5"> 5 </th>
-            <th class="column" data-column="6"> 6 </th>
-            <th class="column" data-column="7"> x </th>
-            <th class="column" data-column="8"> 8 </th>
-            <th class="column" data-column="9"> 9 </th>
+            <th class="column" data-grid="1" data-row="1" data-column="1"> 1 </th>
+            <th class="column" data-grid="1" data-row="1" data-column="2"> 2 </th>
+            <th class="column" data-grid="1" data-row="1" data-column="3"> 3 </th>
+            <th class="column border-left" data-grid="2" data-row="1" data-column="4"> 4 </th>
+            <th class="column" data-grid="2" data-row="1" data-column="5"> 5 </th>
+            <th class="column" data-grid="2" data-row="1" data-column="6"> 6 </th>
+            <th class="column border-left" data-grid="3" data-row="1" data-column="7"> 7 </th>
+            <th class="column" data-grid="3" data-row="1" data-column="8"> 8 </th>
+            <th class="column" data-grid="3" data-row="1" data-column="9"> 9 </th>
         </tr>
         <tr class="row">
-            <th class="column" data-column="1"> 1111 </th>
-            <th class="column" data-column="2"> 5 </th>
-            <th class="column"> 3333 </th>
-            <th class="column"> 4444 </th>
-            <th class="column"> 5555 </th>
-            <th class="column"> 6666 </th>
-            <th class="column"> 7777 </th>
-            <th class="column"> 8888 </th>
-            <th class="column"> 9999 </th>
+            <th class="column" data-grid="1" data-row="2" data-column="1"> 1 </th>
+            <th class="column" data-grid="1" data-row="2" data-column="2"> 2 </th>
+            <th class="column" data-grid="1" data-row="2" data-column="3"> 3 </th>
+            <th class="column border-left" data-grid="2" data-row="2" data-column="4"> 4 </th>
+            <th class="column" data-grid="2" data-row="2" data-column="5"> 5 </th>
+            <th class="column" data-grid="2" data-row="2" data-column="6"> 6 </th>
+            <th class="column border-left" data-grid="3" data-row="2" data-column="7"> 7 </th>
+            <th class="column" data-grid="3" data-row="2" data-column="8"> 8 </th>
+            <th class="column" data-grid="3" data-row="2" data-column="9"> 9 </th>
         </tr>
         <tr class="row">
-            <th class="column" data-column="1"> 1 </th>
-            <th class="column" data-column="2"> 8 </th>
-            <th class="column" data-column="3"> 3 </th>
-            <th class="column" data-column="4"> 4 </th>
-            <th class="column" data-column="5"> 5 </th>
-            <th class="column" data-column="6"> 6 </th>
-            <th class="column" data-column="7"> x </th>
-            <th class="column" data-column="8"> 8 </th>
-            <th class="column" data-column="9"> 9 </th>
+            <th class="column" data-grid="1" data-row="3" data-column="1"> 1 </th>
+            <th class="column" data-grid="1" data-row="3" data-column="2"> 2 </th>
+            <th class="column" data-grid="1" data-row="3" data-column="3"> 3 </th>
+            <th class="column border-left" data-grid="2" data-row="3" data-column="4"> 4 </th>
+            <th class="column" data-grid="2" data-row="3" data-column="5"> 5 </th>
+            <th class="column" data-grid="2" data-row="3" data-column="6"> 6 </th>
+            <th class="column border-left" data-grid="3" data-row="3" data-column="7"> 7 </th>
+            <th class="column" data-grid="3" data-row="3" data-column="8"> 8 </th>
+            <th class="column" data-grid="3" data-row="3" data-column="9"> 9 </th>
         </tr>
+
+
+        <tr class="row border-top">
+            <th class="column" data-grid="4" data-row="4" data-column="1"> 1 </th>
+            <th class="column" data-grid="4" data-row="4" data-column="2"> 2 </th>
+            <th class="column" data-grid="4" data-row="4" data-column="3"> 3 </th>
+            <th class="column border-left" data-grid="5" data-row="4" data-column="4"> 4 </th>
+            <th class="column" data-grid="5" data-row="4" data-column="5"> 5 </th>
+            <th class="column" data-grid="5" data-row="4" data-column="6"> 6 </th>
+            <th class="column border-left" data-grid="6" data-row="4" data-column="7"> 7 </th>
+            <th class="column" data-grid="6" data-row="4" data-column="8"> 8 </th>
+            <th class="column" data-grid="6" data-row="4" data-column="9"> 9 </th>
+        </tr>
+        <tr class="row">
+            <th class="column" data-grid="4" data-row="5" data-column="1"> 1 </th>
+            <th class="column" data-grid="4" data-row="5" data-column="2"> 2 </th>
+            <th class="column" data-grid="4" data-row="5" data-column="3"> 3 </th>
+            <th class="column border-left" data-grid="5" data-row="5" data-column="4"> 4 </th>
+            <th class="column" data-grid="5" data-row="5" data-column="5"> 5 </th>
+            <th class="column" data-grid="5" data-row="5" data-column="6"> 6 </th>
+            <th class="column border-left" data-grid="6" data-row="5" data-column="7"> 7 </th>
+            <th class="column" data-grid="6" data-row="5" data-column="8"> 8 </th>
+            <th class="column" data-grid="6" data-row="5" data-column="9"> 9 </th>
+        </tr>
+        <tr class="row">
+            <th class="column" data-grid="4" data-row="6" data-column="1"> 1 </th>
+            <th class="column" data-grid="4" data-row="6" data-column="2"> 2 </th>
+            <th class="column" data-grid="4" data-row="6" data-column="3"> 3 </th>
+            <th class="column border-left" data-grid="5" data-row="6" data-column="4"> 4 </th>
+            <th class="column" data-grid="5" data-row="6" data-column="5"> 5 </th>
+            <th class="column" data-grid="5" data-row="6" data-column="6"> 6 </th>
+            <th class="column border-left" data-grid="6" data-row="6" data-column="7"> 7 </th>
+            <th class="column" data-grid="6" data-row="6" data-column="8"> 8 </th>
+            <th class="column" data-grid="6" data-row="6" data-column="9"> 9 </th>
+        </tr>
+
+
+        <tr class="row border-top">
+            <th class="column" data-grid="7" data-row="7" data-column="1"> 1 </th>
+            <th class="column" data-grid="7" data-row="7" data-column="2"> 2 </th>
+            <th class="column" data-grid="7" data-row="7" data-column="3"> 3 </th>
+            <th class="column border-left" data-grid="8" data-row="7" data-column="4"> 4 </th>
+            <th class="column" data-grid="8" data-row="7" data-column="5"> 5 </th>
+            <th class="column" data-grid="8" data-row="7" data-column="6"> 6 </th>
+            <th class="column border-left" data-grid="9" data-row="7" data-column="7"> 7 </th>
+            <th class="column" data-grid="9" data-row="7" data-column="8"> 8 </th>
+            <th class="column" data-grid="9" data-row="7" data-column="9"> 9 </th>
+        </tr>
+        <tr class="row">
+            <th class="column" data-grid="7" data-row="8" data-column="1"> 1 </th>
+            <th class="column" data-grid="7" data-row="8" data-column="2"> 2 </th>
+            <th class="column" data-grid="7" data-row="8" data-column="3"> 3 </th>
+            <th class="column border-left" data-grid="8" data-row="8" data-column="4"> 4 </th>
+            <th class="column" data-grid="8" data-row="8" data-column="5"> 5 </th>
+            <th class="column" data-grid="8" data-row="8" data-column="6"> 6 </th>
+            <th class="column border-left" data-grid="9" data-row="8" data-column="7"> 7 </th>
+            <th class="column" data-grid="9" data-row="8" data-column="8"> 8 </th>
+            <th class="column" data-grid="9" data-row="8" data-column="9"> 9 </th>
+        </tr>
+        <tr class="row">
+            <th class="column" data-grid="7" data-row="9" data-column="1"> 1 </th>
+            <th class="column" data-grid="7" data-row="9" data-column="2"> 2 </th>
+            <th class="column" data-grid="7" data-row="9" data-column="3"> 3 </th>
+            <th class="column border-left" data-grid="8" data-row="9" data-column="4"> 4 </th>
+            <th class="column" data-grid="8" data-row="9" data-column="5"> 5 </th>
+            <th class="column" data-grid="8" data-row="9" data-column="6"> 6 </th>
+            <th class="column border-left" data-grid="9" data-row="9" data-column="7"> 7 </th>
+            <th class="column" data-grid="9" data-row="9" data-column="8"> 8 </th>
+            <th class="column" data-grid="9" data-row="9" data-column="9"> 9 </th>
+        </tr>
+
+
     </table>
     <button onclick="main()"> Test </button>
 
