@@ -1,53 +1,54 @@
-
-
-rows_GivenValues = [
-    [],[],[],
-    [],[],[],
-    [],[],[]
-];
-
-rows_PossibleValues = [
-    [],[],[],
-    [],[],[],
-    [],[],[]
-];
-
 /**
- * this section covers the rows
+ * this section covers a single row
+ *
+ * GIVEN: ROW INDEX
+ * WANT: ALL POSSIBLE VALUES FOR THIS ROW INDEX
  **/
 
-function rows_GetAllValues() {
-    const row = document.querySelectorAll('.row');
+let row_PossibleValues = [];
 
+//input [var btwn 1 and grid-size(9)]
+var rowIndex = 1;
+
+function row_GetAllValues() {
+
+    row_GivenValues = [];
+
+    //check this one
+    const row = document.querySelectorAll(`.column[data-row="${rowIndex}"]`);
+
+    //loop
     for(i = 0; i < row.length; i++) {
-        rows_GetOneGivenValue(row[i]);
-        rows_GetOnePossibleValue();
+        row_GivenValues.push(+row[i].innerHTML.trim());
     }
+
+    //cleanup
+    row_GivenValues.sort();
+
+    row_GetAllPossibleValues();
+
+    //output
+    return row_PossibleValues;
 }
 
-function rows_GetOneGivenValue(row) {
-    const column = row.querySelectorAll('.column');
-    var column_GivenValues = [];
+/** GIVEN: row_GivenValues
+*   WANT: row_PossibleValues **/
+function row_GetAllPossibleValues() {
 
-    column.forEach(function(e) {
-        column_GivenValues.push(+e.innerHTML.trim());
-    });
-    column_GivenValues.sort();
-    return rows_GivenValues[i].push(column_GivenValues);
-}
+    //default check values
+    row_PossibleValues = [1,2,3,4,5,6,7,8,9];
 
-function rows_GetOnePossibleValue() {
-    var column_PossibleValues = [1,2,3,4,5,6,7,8,9];
-
+    //loop through row_GivenValues
     for (t = 1; t <= 9; t++) {
 
-        if (rows_GivenValues[i][0].includes(t)) {
-            const remove = column_PossibleValues.indexOf(t);
+        if (row_GivenValues.includes(t)) {
+            const remove = row_PossibleValues.indexOf(t);
             if (remove !== -1) {
-                column_PossibleValues.splice(remove, 1);
+                row_PossibleValues.splice(remove, 1);
             }
         }
     }
-    column_PossibleValues.sort();
-    return rows_PossibleValues[i].push(column_PossibleValues);
+
+    //output
+    return row_PossibleValues;
 }
