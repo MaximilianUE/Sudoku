@@ -1,22 +1,16 @@
 
 function main() {
 
-    column_GetAllValues();
-
-    /*
-    rows_GetAllValues();
+    row_GetAllValues();
     console.log("-----------------------");
-    console.log("result rows");
-    console.log(rows_PossibleValues);
+    console.log("result row");
+    console.log(row_PossibleValues);
     console.log("-----------------------");
-
 
     column_GetAllValues();
     console.log("-----------------------");
-    console.log("result columns");
-    console.log(columns_GivenValues);
+    console.log("result column");
+    console.log(column_PossibleValues);
     console.log("-----------------------");
-
-    */
 
 }
