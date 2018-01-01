@@ -41,6 +41,11 @@ function getFields() {
 
     //while not solved
     while (!solved) {
+
+        //if runs completely without interruption end the program.
+        feedback.innerText = "running";
+        solved = true;
+
     }
 
     feedback.innerText = "solved";
