@@ -6,6 +6,8 @@ var gridIndex;
 var rowIndex;
 var columnIndex;
 
+var solved = false;
+
 function main() {
 
     getFields();
@@ -28,7 +30,20 @@ function main() {
     console.log("result column");
     console.log(column_PossibleValues);
     console.log("-----------------------");
+*/
+}
 
+/** check all fields until the grid is solved **/
+function getFields() {
+
+    const field = document.querySelectorAll('.field');
+    const feedback = document.getElementById('feedback');
+
+    //while not solved
+    while (!solved) {
+    }
+
+    feedback.innerText = "solved";
 }
 
 function field_getIndex(field) {
