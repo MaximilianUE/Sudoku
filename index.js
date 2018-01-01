@@ -31,11 +31,14 @@ function main() {
 
 }
 
-function field_getIndex() {
+function field_getIndex(field) {
 
-    //input [var btwn 1 and grid-size(9)]
-    gridIndex = 1;
-    rowIndex = 1;
-    columnIndex = 1;
+    gridIndex = field.getAttribute('data-grid');
+    rowIndex = field.getAttribute('data-row');
+    columnIndex = field.getAttribute('data-column');
+
+    console.log(gridIndex);
+    console.log(rowIndex);
+    console.log(columnIndex);
 
 }
