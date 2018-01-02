@@ -52,6 +52,14 @@ function solve() {
 
                 field_getIndex(field[i]);
 
+                //get possible Values
+                grid_GetAllValues(gridIndex);
+                row_GetAllValues(rowIndex);
+                column_GetAllValues(columnIndex);
+
+                //add to field_possibleValues
+                field_getAllPossibleValues(field[i]);
+
             }
 
         }
