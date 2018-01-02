@@ -43,9 +43,26 @@ function solve() {
 
         }
 
+        const isEmpty = document.querySelector('.field.isEmpty');
+
+        if (unsolvedHasChanged) {
+            solvedIsDone = false;
+            unsolvedHasChanged = false;
+            feedback.innerText = "continue";
+        }
+
+        else if (isEmpty === null) {
+            solvedIsDone = true;
+            feedback.innerText = "solved";
+        }
+
+        else {
+            solvedIsDone = true;
+            feedback.innerText = "Error; Not solvable";
+        }
+
     }
 
-    feedback.innerText = "solved";
 }
 
 function field_getIndex(field) {
