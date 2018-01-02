@@ -1,5 +1,5 @@
 /**
- * this section covers the main function
+ * this section covers the main functions
  **/
 
 var gridIndex;
@@ -45,26 +45,9 @@ function solve() {
                 field_checkIfSolvable(field[i]);
 
             }
-
         }
 
-        const isEmpty = document.querySelector('.field.isEmpty');
-
-        if (unsolvedHasChanged) {
-            solvedIsDone = false;
-            unsolvedHasChanged = false;
-            feedback.innerText = "continue";
-        }
-
-        else if (isEmpty === null) {
-            solvedIsDone = true;
-            feedback.innerText = "solved";
-        }
-
-        else {
-            solvedIsDone = true;
-            feedback.innerText = "Error; Not solvable";
-        }
+        checkIfSolvedIsDone();
 
     }
 
@@ -77,7 +60,6 @@ function field_getIndex(field) {
     columnIndex = field.getAttribute('data-column');
 
 }
-
 
 function field_getAllPossibleValues() {
 
@@ -105,6 +87,31 @@ function field_checkIfSolvable(field) {
         field.classList.remove('isEmpty');
         unsolvedHasChanged = true;
     }
+    else {
+        field.style.backgroundColor = "red";
+    }
+}
+
+function checkIfSolvedIsDone() {
+
+    const isEmpty = document.querySelector('.field.isEmpty');
+
+    if (unsolvedHasChanged) {
+        solvedIsDone = false;
+        unsolvedHasChanged = false;
+        feedback.innerText = "continue";
+    }
+
+    else if (isEmpty === null) {
+        solvedIsDone = true;
+        feedback.innerText = "solved";
+    }
+
+    else {
+        solvedIsDone = true;
+        feedback.innerText = "Error; Not solvable";
+    }
+
 }
 
 function reset() {
