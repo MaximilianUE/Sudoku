@@ -11,7 +11,7 @@ var solved = false;
 function main() {
 
     getFields();
-
+/* 
     grid_GetAllValues(gridIndex);
     console.log("-----------------------");
     console.log("result grid");
