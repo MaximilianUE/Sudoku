@@ -16,7 +16,7 @@ function row_GetAllValues(rowIndex) {
 
     //loop
     for(var i = 0; i < row.length; i++) {
-        row_GivenValues.push(+row[i].innerHTML.trim());
+        row_GivenValues.push(+row[i].value.trim());
     }
 
     //cleanup

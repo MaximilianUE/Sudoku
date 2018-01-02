@@ -16,7 +16,7 @@ function column_GetAllValues(columnIndex) {
 
     //loop
     for(var i = 0; i < column.length; i++) {
-        column_GivenValues.push(+column[i].innerHTML.trim());
+        column_GivenValues.push(+column[i].value.trim());
     }
 
     //cleanup

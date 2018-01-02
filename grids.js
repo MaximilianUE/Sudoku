@@ -16,7 +16,7 @@ function grid_GetAllValues(gridIndex) {
 
     //loop
     for(var i = 0; i < grid.length; i++) {
-        grid_GivenValues.push(+grid[i].innerHTML.trim());
+        grid_GivenValues.push(+grid[i].value.trim());
     }
 
     //cleanup

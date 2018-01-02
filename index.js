@@ -28,7 +28,7 @@ function solve() {
         for (var i = 0; i < field.length; i++) {
 
             //is field not set?
-            if (field[i].innerText === "") {
+            if (field[i].value === "") {
 
                 field[i].classList.add('isEmpty');
                 field[i].classList.add('wasEmpty');
@@ -82,7 +82,7 @@ function field_getAllPossibleValues() {
 function field_checkIfSolvable(field) {
 
     if(field_PossibleValues.length === 1) {
-        field.innerText = field_PossibleValues;
+        field.value = field_PossibleValues;
         field.style.backgroundColor = "lightgreen";
         field.classList.remove('isEmpty');
         unsolvedHasChanged = true;
@@ -119,11 +119,12 @@ function reset() {
 
     feedback.innerText = "Feedback";
 
-    const clear = document.querySelectorAll('.wasEmpty');
+    var clear = document.querySelectorAll('.wasEmpty');
 
     clear.forEach( function (e) {
-        e.innerText = "";
+        e.value = "";
         e.style.backgroundColor = "white";
+        e.classList.remove('wasEmpty');
     })
 
 }
