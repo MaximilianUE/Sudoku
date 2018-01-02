@@ -53,5 +53,23 @@ function field_getIndex(field) {
     rowIndex = field.getAttribute('data-row');
     columnIndex = field.getAttribute('data-column');
 
+}
+
+
+function field_getAllPossibleValues(field) {
+
+
+    field_PossibleValues = [];
+
+    for (var t = 1; t <= 9; t++) {
+
+        if (grid_PossibleValues.includes(t) &&
+            row_PossibleValues.includes(t) &&
+            column_PossibleValues.includes(t)) {
+
+            field_PossibleValues.push(t);
+        }
+
+    }
 
 }
