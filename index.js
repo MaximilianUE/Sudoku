@@ -80,6 +80,8 @@ function field_checkIfSolvable(field) {
     if(field_PossibleValues.length === 1) {
         field.innerText = field_PossibleValues;
         field.style.backgroundColor = "lightgreen";
+        field.classList.remove('isEmpty');
+        unsolvedHasChanged = true;
     }
 }
 
