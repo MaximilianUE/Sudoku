@@ -72,4 +72,7 @@ function field_getAllPossibleValues(field) {
 
     }
 
+    if(field_PossibleValues.length === 1) {
+        field.innerText = field_PossibleValues;
+    }
 }
