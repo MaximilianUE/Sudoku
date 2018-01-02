@@ -37,7 +37,7 @@ function solve() {
 
                 //add to field_possibleValues
                 field_getAllPossibleValues();
-                field_checkIfSovable(field[i]);
+                field_checkIfSolvable(field[i]);
 
             }
 
@@ -57,7 +57,7 @@ function field_getIndex(field) {
 }
 
 
-function field_getAllPossibleValues(field) {
+function field_getAllPossibleValues() {
 
 
     field_PossibleValues = [];
@@ -73,12 +73,9 @@ function field_getAllPossibleValues(field) {
 
     }
 
-    if(field_PossibleValues.length === 1) {
-        field.innerText = field_PossibleValues;
-    }
-
 }
 
+function field_checkIfSolvable(field) {
 
         if ( (grid_PossibleValues.includes(t) && row_PossibleValues.includes(t)) ||
              (grid_PossibleValues.includes(t) && column_PossibleValues.includes(t)) ||
@@ -89,7 +86,11 @@ function field_getAllPossibleValues(field) {
                 field_PossibleValues.splice(remove, 1);
             }
         }
+    if(field_PossibleValues.length === 1) {
+        field.innerText = field_PossibleValues;
+        field.style.backgroundColor = "lightgreen";
     }
     */
 }
 
+}
