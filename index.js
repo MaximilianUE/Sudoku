@@ -53,8 +53,5 @@ function field_getIndex(field) {
     rowIndex = field.getAttribute('data-row');
     columnIndex = field.getAttribute('data-column');
 
-    console.log(gridIndex);
-    console.log(rowIndex);
-    console.log(columnIndex);
 
 }
