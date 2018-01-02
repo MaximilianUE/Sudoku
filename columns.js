@@ -15,7 +15,7 @@ function column_GetAllValues(columnIndex) {
     const column = document.querySelectorAll(`.field[data-column="${columnIndex}"]`);
 
     //loop
-    for(i = 0; i < column.length; i++) {
+    for(var i = 0; i < column.length; i++) {
         column_GivenValues.push(+column[i].innerHTML.trim());
     }
 
@@ -36,7 +36,7 @@ function column_GetAllPossibleValues() {
     column_PossibleValues = [1,2,3,4,5,6,7,8,9];
 
     //loop through column_GivenValues
-    for (t = 1; t <= 9; t++) {
+    for (var t = 1; t <= 9; t++) {
 
         if (column_GivenValues.includes(t)) {
             const remove = column_PossibleValues.indexOf(t);

@@ -15,7 +15,7 @@ function grid_GetAllValues(gridIndex) {
     const grid = document.querySelectorAll(`.field[data-grid="${gridIndex}"]`);
 
     //loop
-    for(i = 0; i < grid.length; i++) {
+    for(var i = 0; i < grid.length; i++) {
         grid_GivenValues.push(+grid[i].innerHTML.trim());
     }
 
@@ -36,7 +36,7 @@ function grid_GetAllPossibleValues() {
     grid_PossibleValues = [1,2,3,4,5,6,7,8,9];
 
     //loop through grid_GivenValues
-    for (t = 1; t <= 9; t++) {
+    for (var t = 1; t <= 9; t++) {
 
         if (grid_GivenValues.includes(t)) {
             const remove = grid_PossibleValues.indexOf(t);

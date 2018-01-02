@@ -15,7 +15,7 @@ function row_GetAllValues(rowIndex) {
     const row = document.querySelectorAll(`.field[data-row="${rowIndex}"]`);
 
     //loop
-    for(i = 0; i < row.length; i++) {
+    for(var i = 0; i < row.length; i++) {
         row_GivenValues.push(+row[i].innerHTML.trim());
     }
 
@@ -36,7 +36,7 @@ function row_GetAllPossibleValues() {
     row_PossibleValues = [1,2,3,4,5,6,7,8,9];
 
     //loop through row_GivenValues
-    for (t = 1; t <= 9; t++) {
+    for (var t = 1; t <= 9; t++) {
 
         if (row_GivenValues.includes(t)) {
             const remove = row_PossibleValues.indexOf(t);
