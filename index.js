@@ -82,3 +82,17 @@ function field_checkIfSolvable(field) {
         field.style.backgroundColor = "lightgreen";
     }
 }
+
+function reset() {
+    solvedIsDone = false;
+
+    feedback.innerText = "Feedback";
+
+    const clear = document.querySelectorAll('.wasEmpty');
+
+    clear.forEach( function (e) {
+        e.innerText = "";
+        e.style.backgroundColor = "white";
+    })
+
+}
