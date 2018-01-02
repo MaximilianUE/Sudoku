@@ -6,27 +6,32 @@ var gridIndex;
 var rowIndex;
 var columnIndex;
 
-var solved = false;
+var solvedIsDone = false;
+var unsolvedHasChanged = false;
 
 let field_PossibleValues = [];
 
-/** check all fields until the grid is solved **/
+const feedback = document.getElementById('feedback');
+
+
+/** check all fields until the grid is solvedIsDone **/
 function solve() {
 
     const field = document.querySelectorAll('.field');
-    const feedback = document.getElementById('feedback');
 
-    //while not solved
-    while (!solved) {
+    //while not solvedIsDone
+    while (!solvedIsDone) {
 
         //if runs completely without interruption end the program.
         feedback.innerText = "running";
-        solved = true;
 
-        for(var i = 0; i < field.length; i++) {
+        for (var i = 0; i < field.length; i++) {
 
             //is field not set?
             if (field[i].innerText === "") {
+
+                field[i].classList.add('isEmpty');
+                field[i].classList.add('wasEmpty');
 
                 field_getIndex(field[i]);
 
