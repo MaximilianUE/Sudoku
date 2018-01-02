@@ -33,7 +33,7 @@ function main() {
 }
 
 /** check all fields until the grid is solved **/
-function getFields() {
+function solve() {
 
     const field = document.querySelectorAll('.field');
     const feedback = document.getElementById('feedback');
