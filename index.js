@@ -36,7 +36,8 @@ function solve() {
                 column_GetAllValues(columnIndex);
 
                 //add to field_possibleValues
-                field_getAllPossibleValues(field[i]);
+                field_getAllPossibleValues();
+                field_checkIfSovable(field[i]);
 
             }
 
