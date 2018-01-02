@@ -77,20 +77,8 @@ function field_getAllPossibleValues() {
 
 function field_checkIfSolvable(field) {
 
-        if ( (grid_PossibleValues.includes(t) && row_PossibleValues.includes(t)) ||
-             (grid_PossibleValues.includes(t) && column_PossibleValues.includes(t)) ||
-             (row_PossibleValues.includes(t) && column_PossibleValues.includes(t)) ) {
-            const remove = field_PossibleValues.indexOf(t);
-            console.log(remove);
-            if (remove !== -1) {
-                field_PossibleValues.splice(remove, 1);
-            }
-        }
     if(field_PossibleValues.length === 1) {
         field.innerText = field_PossibleValues;
         field.style.backgroundColor = "lightgreen";
     }
-    */
-}
-
 }
