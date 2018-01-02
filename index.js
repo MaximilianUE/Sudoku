@@ -11,7 +11,6 @@ var solved = false;
 function main() {
 
     getFields();
-    field_getIndex();
 
     grid_GetAllValues(gridIndex);
     console.log("-----------------------");
@@ -45,6 +44,17 @@ function getFields() {
         //if runs completely without interruption end the program.
         feedback.innerText = "running";
         solved = true;
+
+        for(var i = 0; i < field.length; i++) {
+
+            //is field not set?
+            if (field[i].innerText === "") {
+
+                field_getIndex(field[i]);
+
+            }
+
+        }
 
     }
 
