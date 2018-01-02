@@ -8,29 +8,7 @@ var columnIndex;
 
 var solved = false;
 
-function main() {
-
-    getFields();
-/* 
-    grid_GetAllValues(gridIndex);
-    console.log("-----------------------");
-    console.log("result grid");
-    console.log(grid_PossibleValues);
-    console.log("-----------------------");
-
-    row_GetAllValues(rowIndex);
-    console.log("-----------------------");
-    console.log("result row");
-    console.log(row_PossibleValues);
-    console.log("-----------------------");
-
-    column_GetAllValues(columnIndex);
-    console.log("-----------------------");
-    console.log("result column");
-    console.log(column_PossibleValues);
-    console.log("-----------------------");
-*/
-}
+let field_PossibleValues = [];
 
 /** check all fields until the grid is solved **/
 function solve() {
