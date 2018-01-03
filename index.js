@@ -6,7 +6,8 @@ var gridIndex;
 var rowIndex;
 var columnIndex;
 
-var solvedIsDone = false;
+var solvedIsDone;
+var solved;
 var unsolvedHasChanged = false;
 
 let field_PossibleValues = [];
@@ -21,6 +22,9 @@ fieldInit.forEach(function(e) {
 
 /** check all fields until the grid is solvedIsDone **/
 function solve() {
+
+    solvedIsDone = false;
+    solved = false;
 
     const field = document.querySelectorAll('.field');
 
@@ -114,11 +118,13 @@ function checkIfSolvedIsDone() {
 
     else if (isEmpty === null) {
         solvedIsDone = true;
+        solved = true;
         feedback.innerText = "solved";
     }
 
     else {
         solvedIsDone = true;
+        solved = false;
         feedback.innerText = "Error; Not solvable";
     }
 
@@ -126,6 +132,7 @@ function checkIfSolvedIsDone() {
 
 function reset() {
     solvedIsDone = false;
+    solved = false;
 
     feedback.innerText = "Feedback";
 
