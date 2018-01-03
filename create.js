@@ -49,9 +49,27 @@ function create() {
             create_PossibleValues.push(shift);
         }
 
-
         loop++;
-
     }
 
+
+
+}
+
+function canItBeSolved() {
+
+    grid = document.querySelectorAll(`.field[data-grid="${gridIndex}"]`);
+    gridEmpty = document.querySelectorAll(`.field.isEmpty[data-grid="${gridIndex}"]`);
+    console.log(gridEmpty.length);
+
+    if (gridEmpty.length <= 0) {
+        solveable = true;
+    }
+    else {
+        solveable = false;
+        grid.forEach(function (e) {
+            e.value = "";
+            e.classList.add('isEmpty');
+        });
+    }
 }
