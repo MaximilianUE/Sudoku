@@ -41,9 +41,7 @@ function solve() {
                 field_getIndex(field[i]);
 
                 //get possible Values
-                grid_GetAllValues(gridIndex);
-                row_GetAllValues(rowIndex);
-                column_GetAllValues(columnIndex);
+                field_getAllValues();
 
                 //add to field_possibleValues
                 field_getAllPossibleValues();
@@ -66,8 +64,13 @@ function field_getIndex(field) {
 
 }
 
-function field_getAllPossibleValues() {
+function field_getAllValues() {
+    grid_GetAllValues(gridIndex);
+    row_GetAllValues(rowIndex);
+    column_GetAllValues(columnIndex);
+}
 
+function field_getAllPossibleValues() {
 
     field_PossibleValues = [];
 
@@ -81,6 +84,8 @@ function field_getAllPossibleValues() {
         }
 
     }
+
+    return field_PossibleValues;
 
 }
 
