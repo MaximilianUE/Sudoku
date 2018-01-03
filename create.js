@@ -31,14 +31,17 @@ function create() {
         //choose a possible random field
         random = Math.floor(Math.random() * grid.length);
 
-        console.log(grid.length);
-
         //get all possible values for this field
-        rowIndex = grid[random].getAttribute('data-row');
-        row_GetAllValues(rowIndex);
+        field_getIndex(grid[random]);
+
+        field_getAllValues();
+
+        //get possible Values
+        field_getAllPossibleValues();
 
         shift = create_PossibleValues.shift();
-        const test = row_PossibleValues.indexOf(shift);
+        const test = field_PossibleValues.indexOf(shift);
+
         //only if row_PossibleValues
         if (test !== -1) {
             grid[random].value = shift;
