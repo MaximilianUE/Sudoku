@@ -1,14 +1,16 @@
 
-var create_PossibleValues = [1,2,3,4,5,6,7,8,9];
+var create_PossibleValues;
 var random;
 
 const field = document.querySelectorAll('.field');
 
-var solveable = false;
+var solveable;
 
 function create() {
 
     var gridIndex = 1;
+
+    create_PossibleValues = [1,2,3,4,5,6,7,8,9];
 
     while ( create_PossibleValues.length  > 0 ) {
 
@@ -19,14 +21,51 @@ function create() {
 
     }
 
-    gridIndex = 2;
+    fillInField(2);
+    fillInField(3);
+    fillInField(4);
+    fillInField(5);
+    fillInField(7);
 
-    while (solveable === false) {
+    solve();
 
+    /*
+    const isEmpty = document.querySelector('.field.isEmpty');
+
+    if (isEmpty === null) {
+        feedback.innerText = "start";
+    }
+    else {
+        create_HardReset();
+    }
+    */
+
+}
+
+function fillInField(gridIndex) {
+    solveable = false;
+    var timeUnitlReset = 500;
+
+    while (solveable === false && timeUnitlReset > 0) {
         fillField(gridIndex);
         canItBeSolved();
+        timeUnitlReset--;
     }
 
+    if (solveable === false) {
+        console.log("hard");
+        create_HardReset();
+    }
+}
+
+function create_HardReset() {
+    grid = document.querySelectorAll('.field');
+
+    grid.forEach(function (e) {
+        e.value = "";
+        e.classList.add('isEmpty');
+    });
+    create();
 }
 
 function fillField(gridIndex) {
@@ -46,7 +85,6 @@ function fillField(gridIndex) {
         field_getIndex(grid[random]);
 
         field_getAllValues();
-
         //get possible Values
         field_getAllPossibleValues();
 
@@ -65,15 +103,12 @@ function fillField(gridIndex) {
         loop++;
     }
 
-
-
 }
 
 function canItBeSolved() {
 
     grid = document.querySelectorAll(`.field[data-grid="${gridIndex}"]`);
     gridEmpty = document.querySelectorAll(`.field.isEmpty[data-grid="${gridIndex}"]`);
-    console.log(gridEmpty.length);
 
     if (gridEmpty.length <= 0) {
         solveable = true;
