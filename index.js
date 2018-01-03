@@ -13,6 +13,11 @@ let field_PossibleValues = [];
 
 const feedback = document.getElementById('feedback');
 
+const fieldInit = document.querySelectorAll(`.field`);
+
+fieldInit.forEach(function(e) {
+    e.classList.add('isEmpty');
+});
 
 /** check all fields until the grid is solvedIsDone **/
 function solve() {
