@@ -1,13 +1,12 @@
 
 var create_PossibleValues = [1,2,3,4,5,6,7,8,9];
+var random;
 
 const field = document.querySelectorAll('.field');
 
-var loop = 1;
+var solveable = false;
 
 function create() {
-
-    var randomValue;
 
     var gridIndex = 1;
 
