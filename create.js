@@ -21,9 +21,20 @@ function create() {
 
     gridIndex = 2;
 
+    while (solveable === false) {
+
+        fillField(gridIndex);
+        canItBeSolved();
+    }
+
+}
+
+function fillField(gridIndex) {
+
     create_PossibleValues = [1,2,3,4,5,6,7,8,9];
 
-    while ( create_PossibleValues.length  > 0 && loop < 500) {
+    var loop = 0;
+    while ( create_PossibleValues.length  > 0 && loop <= 9 ) {
 
         //select all possible fields
         grid = document.querySelectorAll(`.field.isEmpty[data-grid="${gridIndex}"]`);
