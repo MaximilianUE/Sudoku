@@ -14,15 +14,20 @@ function createGame() {
     create_fillInGrid(2);
     create_fillInGrid(3);
     create_fillInGrid(4);
-    create_fillInGrid(8);
-    create_fillInGrid(9);
+    create_fillInGrid(5);
+    create_fillInGrid(6);
+    create_fillInGrid(7);
 
-   for (var i = 1; i <= 10; i++) {
-        create_fillOneRandomField();
+//    create_checkIfSolveable();
+}
+
+function fillTest() {
+
+    for (var i = 1; i <= 10; i++) {
+
     }
 
-    create_checkIfSolveable();
-
+    //create_checkIfSolveable();
 }
 
 //check if solvable
