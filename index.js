@@ -34,7 +34,6 @@ function solveGame() {
             if (field[i].value === "") {
 
                 field[i].classList.add('isEmpty');
-                field[i].classList.add('wasEmpty');
 
                 field_getIndex(field[i]);
 
@@ -103,7 +102,6 @@ function resetGame() {
     clear.forEach( function (e) {
         e.value = "";
         e.style.backgroundColor = "white";
-        e.classList.remove('wasEmpty');
     })
 
 }
