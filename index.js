@@ -21,7 +21,7 @@ fieldInit.forEach(function(e) {
 });
 
 /** check all fields until the grid is solvedIsDone **/
-function solve() {
+function solveGame() {
 
     solvedIsDone = false;
     solved = false;
@@ -130,7 +130,7 @@ function checkIfSolvedIsDone() {
 
 }
 
-function reset() {
+function resetGame() {
     solvedIsDone = false;
     solved = false;
 
