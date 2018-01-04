@@ -122,10 +122,10 @@ function create_deleteOneRandomField() {
 
         if ( create_checkIfSolvable(field[randomField]) ) {
             field[randomField].classList.add('wasEmpty');
+            field[randomField].disabled = false;
         }
         else {
             field[randomField].value = value;
-            console.log("sorry bro");
         }
 }
 
@@ -143,5 +143,6 @@ function create_resetAllFields() {
     field.forEach( function (e) {
         e.classList.remove('wasEmpty');
         e.classList.remove('incorrect', 'correct');
+        e.disabled = true;
     });
 }
