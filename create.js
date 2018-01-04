@@ -105,8 +105,6 @@ function create_fillOneRandomField() {
         field_getAllValues();
         field_getAllPossibleValues(); //returns => field_PossibleValues
 
-        if (field_PossibleValues.length > 0) {
-
             randomNumber = Math.floor(Math.random() * field_PossibleValues.length);
 
             const remove = grid_PossibleValues.indexOf(randomNumber);
@@ -115,11 +113,6 @@ function create_fillOneRandomField() {
             emptyField[randomEmptyField].value = removeMe;
             emptyField[randomEmptyField].classList.remove('isEmpty');
 
-        }
-        else {
-            console.log("throw error");
-            success = false;
-        }
+            solve_checkIfSolvable(emptyField[randomEmptyField]);
     }
-
 }
