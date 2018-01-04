@@ -141,7 +141,7 @@ function create_resetAllFields() {
     const field = document.querySelectorAll('.field');
 
     field.forEach( function (e) {
-        e.style.backgroundColor = "white";
         e.classList.remove('wasEmpty');
+        e.classList.remove('incorrect', 'correct');
     });
 }

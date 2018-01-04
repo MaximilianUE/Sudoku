@@ -79,14 +79,16 @@ function checkIfSolvedIsDone() {
 
 function solve_checkIfSolvable(field) {
 
+    field.classList.remove('incorrect', 'correct');
+
     if(field_PossibleValues.length === 1) {
         field.value = field_PossibleValues;
-        field.style.backgroundColor = "lightgreen";
+        field.classList.add('correct');
         field.classList.remove('isEmpty');
         unsolvedHasChanged = true;
     }
     else {
-        field.style.backgroundColor = "red";
+        field.classList.add('incorrect');
     }
 }
 
@@ -95,13 +97,13 @@ function resetGame() {
     solvedIsDone = false;
     solved = false;
 
-    feedback.innerText = "Feedback";
+    feedback.innerText = "Reset";
 
     var clear = document.querySelectorAll('.wasEmpty');
 
     clear.forEach( function (e) {
         e.value = "";
-        e.style.backgroundColor = "white";
+        e.classList.remove('incorrect', 'correct');
     })
 
 }
@@ -116,8 +118,8 @@ function hardReset() {
 
     clear.forEach( function (e) {
         e.value = "";
-        e.style.backgroundColor = "white";
         e.classList.remove('wasEmpty');
+        e.classList.remove('incorrect', 'correct');
         e.classList.add('isEmpty');
     })
 

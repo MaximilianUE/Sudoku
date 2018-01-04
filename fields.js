@@ -31,7 +31,7 @@ function field_getAllPossibleValues() {
 
 function field_resetField(field) {
     field.value = "";
-    field.style.backgroundColor = "white";
+    field.classList.remove('incorrect', 'correct');
     field.classList.remove('wasEmpty');
     field.classList.add('isEmpty');
 }
