@@ -17,7 +17,18 @@ const feedback = document.getElementById('feedback');
 /** check all fields until the grid is solvedIsDone **/
 function solveGame() {
 
-    hardReset()
+    solvedIsDone = false;
+    solved = false;
+
+    feedback.innerText = "Feedback";
+
+    var clear = document.querySelectorAll('.field');
+
+    clear.forEach( function (e) {
+        e.style.backgroundColor = "white";
+        e.classList.remove('wasEmpty');
+        e.classList.add('isEmpty');
+    })
 
     const field = document.querySelectorAll('.field');
 
