@@ -145,3 +145,21 @@ function resetGame() {
     })
 
 }
+
+function hardReset() {
+    solvedIsDone = false;
+    solved = false;
+
+    feedback.innerText = "Feedback";
+
+    var clear = document.querySelectorAll('.field');
+
+    clear.forEach( function (e) {
+        e.value = "";
+        e.style.backgroundColor = "white";
+        e.classList.remove('wasEmpty');
+        e.classList.add('isEmpty');
+    })
+
+}
+
