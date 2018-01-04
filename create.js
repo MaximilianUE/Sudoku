@@ -45,8 +45,6 @@ function create_fillInGrid(gridIndex) {
 
         success = true;
 
-        const emptyField = document.querySelector('.field.isEmpty[data-grid="${gridIndex}"]');
-
         for (var i = 0; i < 9; i++) {
 
             //check single field
@@ -64,13 +62,15 @@ function create_fillInGrid(gridIndex) {
                 grid[i].value = removeMe;
                 grid[i].classList.remove('isEmpty');
             }
-            else {
-                console.log("throw error");
-                success = false;
-                grid.forEach(function (e) {
-                    field_resetField(e);
-                })
-            }
+            field_checkIfSolvable(grid[i]);
+        }
+        const emptyField = document.querySelector(`.field.isEmpty[data-grid="${gridIndex}"]`);
+
+        if (emptyField !== null) {
+            success = false;
+            grid.forEach( function (e) {
+                field_resetField(e);
+            });
         }
     }
 
