@@ -11,6 +11,16 @@
     <script type="text/javascript" src="index.js" defer> </script>
 </head>
 <style>
+
+    .title {
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
     table {
         border-collapse: collapse;
         border-spacing: 0;
@@ -65,282 +75,285 @@
 
 </style>
 <body>
+    <h1 class="title"> Sudoku </h1>
+
+    <div class="container">
+
+        <table>
+        <tr class="row">
+            <th>
+                <input class="field" data-grid="1" data-row="1" data-column="1" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="1" data-row="1" data-column="2" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="1" data-row="1" data-column="3" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="2" data-row="1" data-column="4" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="2" data-row="1" data-column="5" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="2" data-row="1" data-column="6" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="3" data-row="1" data-column="7" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="3" data-row="1" data-column="8" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="3" data-row="1" data-column="9" value="">
+            </th>
+        </tr>
+        <tr class="row">
+            <th>
+                <input class="field" data-grid="1" data-row="2" data-column="1" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="1" data-row="2" data-column="2" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="1" data-row="2" data-column="3" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="2" data-row="2" data-column="4" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="2" data-row="2" data-column="5" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="2" data-row="2" data-column="6" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="3" data-row="2" data-column="7" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="3" data-row="2" data-column="8" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="3" data-row="2" data-column="9" value="">
+            </th>
+        </tr>
+        <tr class="row">
+            <th>
+                <input class="field" data-grid="1" data-row="3" data-column="1" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="1" data-row="3" data-column="2" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="1" data-row="3" data-column="3" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="2" data-row="3" data-column="4" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="2" data-row="3" data-column="5" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="2" data-row="3" data-column="6" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="3" data-row="3" data-column="7" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="3" data-row="3" data-column="8" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="3" data-row="3" data-column="9" value="">
+            </th>
+        </tr>
 
 
-<table>
-    <tr class="row">
-        <th>
-            <input class="field" data-grid="1" data-row="1" data-column="1" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="1" data-row="1" data-column="2" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="1" data-row="1" data-column="3" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="2" data-row="1" data-column="4" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="2" data-row="1" data-column="5" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="2" data-row="1" data-column="6" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="3" data-row="1" data-column="7" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="3" data-row="1" data-column="8" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="3" data-row="1" data-column="9" value="">
-        </th>
-    </tr>
-    <tr class="row">
-        <th>
-            <input class="field" data-grid="1" data-row="2" data-column="1" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="1" data-row="2" data-column="2" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="1" data-row="2" data-column="3" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="2" data-row="2" data-column="4" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="2" data-row="2" data-column="5" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="2" data-row="2" data-column="6" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="3" data-row="2" data-column="7" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="3" data-row="2" data-column="8" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="3" data-row="2" data-column="9" value="">
-        </th>
-    </tr>
-    <tr class="row">
-        <th>
-            <input class="field" data-grid="1" data-row="3" data-column="1" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="1" data-row="3" data-column="2" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="1" data-row="3" data-column="3" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="2" data-row="3" data-column="4" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="2" data-row="3" data-column="5" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="2" data-row="3" data-column="6" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="3" data-row="3" data-column="7" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="3" data-row="3" data-column="8" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="3" data-row="3" data-column="9" value="">
-        </th>
-    </tr>
+        <tr class="row border-top">
+            <th>
+                <input class="field" data-grid="4" data-row="4" data-column="1" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="4" data-row="4" data-column="2" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="4" data-row="4" data-column="3" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="5" data-row="4" data-column="4" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="5" data-row="4" data-column="5" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="5" data-row="4" data-column="6" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="6" data-row="4" data-column="7" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="6" data-row="4" data-column="8" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="6" data-row="4" data-column="9" value="">
+            </th>
+        </tr>
+        <tr class="row">
+            <th>
+                <input class="field" data-grid="4" data-row="5" data-column="1" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="4" data-row="5" data-column="2" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="4" data-row="5" data-column="3" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="5" data-row="5" data-column="4" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="5" data-row="5" data-column="5" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="5" data-row="5" data-column="6" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="6" data-row="5" data-column="7" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="6" data-row="5" data-column="8" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="6" data-row="5" data-column="9" value="">
+            </th>
+        </tr>
+        <tr class="row">
+            <th>
+                <input class="field" data-grid="4" data-row="6" data-column="1" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="4" data-row="6" data-column="2" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="4" data-row="6" data-column="3" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="5" data-row="6" data-column="4" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="5" data-row="6" data-column="5" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="5" data-row="6" data-column="6" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="6" data-row="6" data-column="7" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="6" data-row="6" data-column="8" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="6" data-row="6" data-column="9" value="">
+            </th>
+        </tr>
 
 
-    <tr class="row border-top">
-        <th>
-            <input class="field" data-grid="4" data-row="4" data-column="1" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="4" data-row="4" data-column="2" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="4" data-row="4" data-column="3" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="5" data-row="4" data-column="4" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="5" data-row="4" data-column="5" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="5" data-row="4" data-column="6" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="6" data-row="4" data-column="7" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="6" data-row="4" data-column="8" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="6" data-row="4" data-column="9" value="">
-        </th>
-    </tr>
-    <tr class="row">
-        <th>
-            <input class="field" data-grid="4" data-row="5" data-column="1" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="4" data-row="5" data-column="2" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="4" data-row="5" data-column="3" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="5" data-row="5" data-column="4" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="5" data-row="5" data-column="5" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="5" data-row="5" data-column="6" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="6" data-row="5" data-column="7" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="6" data-row="5" data-column="8" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="6" data-row="5" data-column="9" value="">
-        </th>
-    </tr>
-    <tr class="row">
-        <th>
-            <input class="field" data-grid="4" data-row="6" data-column="1" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="4" data-row="6" data-column="2" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="4" data-row="6" data-column="3" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="5" data-row="6" data-column="4" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="5" data-row="6" data-column="5" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="5" data-row="6" data-column="6" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="6" data-row="6" data-column="7" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="6" data-row="6" data-column="8" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="6" data-row="6" data-column="9" value="">
-        </th>
-    </tr>
+        <tr class="row border-top">
+            <th>
+                <input class="field" data-grid="7" data-row="7" data-column="1" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="7" data-row="7" data-column="2" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="7" data-row="7" data-column="3" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="8" data-row="7" data-column="4" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="8" data-row="7" data-column="5" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="8" data-row="7" data-column="6" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="9" data-row="7" data-column="7" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="9" data-row="7" data-column="8" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="9" data-row="7" data-column="9" value="">
+            </th>
+        </tr>
+        <tr class="row">
+            <th>
+                <input class="field" data-grid="7" data-row="8" data-column="1" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="7" data-row="8" data-column="2" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="7" data-row="8" data-column="3" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="8" data-row="8" data-column="4" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="8" data-row="8" data-column="5" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="8" data-row="8" data-column="6" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="9" data-row="8" data-column="7" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="9" data-row="8" data-column="8" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="9" data-row="8" data-column="9" value="">
+            </th>
+        </tr>
+        <tr class="row">
+            <th>
+                <input class="field" data-grid="7" data-row="9" data-column="1" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="7" data-row="9" data-column="2" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="7" data-row="9" data-column="3" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="8" data-row="9" data-column="4" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="8" data-row="9" data-column="5" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="8" data-row="9" data-column="6" value="">
+            </th>
+            <th class="border-left">
+                <input class="field" data-grid="9" data-row="9" data-column="7" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="9" data-row="9" data-column="8" value="">
+            </th>
+            <th>
+                <input class="field" data-grid="9" data-row="9" data-column="9" value="">
+            </th>
+        </tr>
+    </table>
 
-
-    <tr class="row border-top">
-        <th>
-            <input class="field" data-grid="7" data-row="7" data-column="1" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="7" data-row="7" data-column="2" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="7" data-row="7" data-column="3" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="8" data-row="7" data-column="4" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="8" data-row="7" data-column="5" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="8" data-row="7" data-column="6" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="9" data-row="7" data-column="7" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="9" data-row="7" data-column="8" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="9" data-row="7" data-column="9" value="">
-        </th>
-    </tr>
-    <tr class="row">
-        <th>
-            <input class="field" data-grid="7" data-row="8" data-column="1" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="7" data-row="8" data-column="2" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="7" data-row="8" data-column="3" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="8" data-row="8" data-column="4" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="8" data-row="8" data-column="5" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="8" data-row="8" data-column="6" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="9" data-row="8" data-column="7" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="9" data-row="8" data-column="8" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="9" data-row="8" data-column="9" value="">
-        </th>
-    </tr>
-    <tr class="row">
-        <th>
-            <input class="field" data-grid="7" data-row="9" data-column="1" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="7" data-row="9" data-column="2" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="7" data-row="9" data-column="3" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="8" data-row="9" data-column="4" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="8" data-row="9" data-column="5" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="8" data-row="9" data-column="6" value="">
-        </th>
-        <th class="border-left">
-            <input class="field" data-grid="9" data-row="9" data-column="7" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="9" data-row="9" data-column="8" value="">
-        </th>
-        <th>
-            <input class="field" data-grid="9" data-row="9" data-column="9" value="">
-        </th>
-    </tr>
-</table>
-
-
+    </div>
     <div class="menu">
         <p id="feedback">Feedback</p>
         <button onclick="createGame()"> Create </button>
         <button onclick="solveGame()"> Solve </button>
         <button onclick="resetGame()"> Reset </button>
     </div>
+
 </body>
 </html>
