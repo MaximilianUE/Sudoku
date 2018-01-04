@@ -40,7 +40,7 @@ function create_checkIfSolveable() {
 
         if (solved === true) {
             create_resetAllFields();
-            create_emptySomeFields(40);
+            create_emptySomeFields(45);
             feedback.innerText = "Start game";
         }
 
