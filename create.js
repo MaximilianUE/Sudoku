@@ -62,8 +62,9 @@ function create_fillInGrid(gridIndex) {
                 grid[i].value = removeMe;
                 grid[i].classList.remove('isEmpty');
             }
-            field_checkIfSolvable(grid[i]);
+            solve_checkIfSolvable(grid[i]);
         }
+
         const emptyField = document.querySelector(`.field.isEmpty[data-grid="${gridIndex}"]`);
 
         if (emptyField !== null) {

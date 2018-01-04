@@ -42,7 +42,7 @@ function solveGame() {
 
                 //add to field_possibleValues
                 field_getAllPossibleValues();
-                field_checkIfSolvable(field[i]);
+                solve_checkIfSolvable(field[i]);
 
             }
         }
