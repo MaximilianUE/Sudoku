@@ -21,9 +21,9 @@ function createGame() {
     create_checkIfSolveable();
 }
 
-function fillTest() {
+function create_emptySomeFields(amount) {
 
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < amount; i++) {
         create_deleteOneRandomField();
     }
 }
@@ -41,6 +41,7 @@ function create_checkIfSolveable() {
         if (solved === true) {
             console.log("🎉");
             create_resetAllFields();
+            create_emptySomeFields(40);
         }
 
         else if (deathClock > 1000) {
