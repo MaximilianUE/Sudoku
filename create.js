@@ -4,6 +4,8 @@
 
 var random;
 
+var deathClock = 0;
+
 const field = document.querySelectorAll('.field');
 
 function createGame() {
@@ -18,7 +20,7 @@ function createGame() {
     create_fillInGrid(6);
     create_fillInGrid(7);
 
-//    create_checkIfSolveable();
+    create_checkIfSolveable();
 }
 
 function fillTest() {
@@ -26,18 +28,31 @@ function fillTest() {
     for (var i = 1; i <= 10; i++) {
 
     }
-
-    //create_checkIfSolveable();
 }
 
 //check if solvable
 function create_checkIfSolveable() {
     solveGame();
+    deathClock++;
+
+     console.log(solved);
+
     checkIfSolvedIsDone();
-    console.log(solved);
-    if (solved === false) {
-        createGame();
-    }
+
+        if (solved === true) {
+            console.log("🎉");
+        }
+
+        else if (deathClock > 1000) {
+            deathClock = 0;
+            console.log("sorry I hate my life");
+            hardReset();
+        }
+
+        else {
+            createGame();
+        }
+
 }
 
 function create_fillInGrid(gridIndex) {
@@ -69,7 +84,6 @@ function create_fillInGrid(gridIndex) {
                 grid[i].value = removeMe;
                 grid[i].classList.remove('isEmpty');
             }
-            solve_checkIfSolvable(grid[i]);
         }
 
         const emptyField = document.querySelector(`.field.isEmpty[data-grid="${gridIndex}"]`);
@@ -84,7 +98,7 @@ function create_fillInGrid(gridIndex) {
         timeUnitlReset++;
 
         if (timeUnitlReset > 30) {
-            setTimeout(function(){ hardReset(); }, 100);
+            setTimeout(function(){ hardReset(); }, 1);
             break;
         }
 
