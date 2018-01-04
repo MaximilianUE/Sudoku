@@ -20,16 +20,6 @@ function solveGame() {
     solvedIsDone = false;
     solved = false;
 
-    feedback.innerText = "Feedback";
-
-    var clear = document.querySelectorAll('.field');
-
-    clear.forEach( function (e) {
-        e.style.backgroundColor = "white";
-        e.classList.remove('wasEmpty');
-        e.classList.add('isEmpty');
-    })
-
     const field = document.querySelectorAll('.field');
 
     //while not solvedIsDone
