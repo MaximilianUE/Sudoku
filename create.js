@@ -39,14 +39,13 @@ function create_checkIfSolveable() {
     checkIfSolvedIsDone();
 
         if (solved === true) {
-            console.log("🎉");
             create_resetAllFields();
             create_emptySomeFields(40);
+            feedback.innerText = "Start game";
         }
 
         else if (deathClock > 1000) {
             deathClock = 0;
-            console.log("sorry I hate my life");
             hardReset();
         }
 
@@ -99,7 +98,7 @@ function create_fillInGrid(gridIndex) {
         timeUnitlReset++;
 
         if (timeUnitlReset > 30) {
-            setTimeout(function(){ hardReset(); }, 100);
+            hardReset();
             break;
         }
 
