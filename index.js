@@ -77,6 +77,20 @@ function checkIfSolvedIsDone() {
 
 }
 
+function solve_checkIfSolvable(field) {
+
+    if(field_PossibleValues.length === 1) {
+        field.value = field_PossibleValues;
+        field.style.backgroundColor = "lightgreen";
+        field.classList.remove('isEmpty');
+        unsolvedHasChanged = true;
+    }
+    else {
+        field.style.backgroundColor = "red";
+    }
+}
+
+
 function resetGame() {
     solvedIsDone = false;
     solved = false;

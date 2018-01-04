@@ -29,20 +29,6 @@ function field_getAllPossibleValues() {
     return field_PossibleValues;
 }
 
-
-function field_checkIfSolvable(field) {
-
-    if(field_PossibleValues.length === 1) {
-        field.value = field_PossibleValues;
-        field.style.backgroundColor = "lightgreen";
-        field.classList.remove('isEmpty');
-        unsolvedHasChanged = true;
-    }
-    else {
-        field.style.backgroundColor = "red";
-    }
-}
-
 function field_resetField(field) {
     field.value = "";
     field.style.backgroundColor = "white";
