@@ -1,3 +1,40 @@
+/**
+ * this section covers the grid creation
+ **/
+
+var random;
+
+const field = document.querySelectorAll('.field');
+
+function createGame() {
+
+    hardReset();
+
+    create_fillInGrid(1);
+    create_fillInGrid(2);
+    create_fillInGrid(3);
+    create_fillInGrid(4);
+    create_fillInGrid(8);
+    create_fillInGrid(9);
+
+   for (var i = 1; i <= 10; i++) {
+        create_fillOneRandomField();
+    }
+
+    create_checkIfSolveable();
+
+}
+
+//check if solvable
+function create_checkIfSolveable() {
+    solveGame();
+    checkIfSolvedIsDone();
+    console.log(solved);
+    if (solved === false) {
+        createGame();
+    }
+}
+
 function create_fillInGrid(gridIndex) {
 
     //select all possible fields
@@ -38,6 +75,7 @@ function create_fillInGrid(gridIndex) {
     }
 
 }
+
 function create_fillOneRandomField() {
 
     const emptyField = document.querySelectorAll('.field.isEmpty');
