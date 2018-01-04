@@ -41,6 +41,8 @@ function create_fillInGrid(gridIndex) {
     const grid = document.querySelectorAll(`.field[data-grid="${gridIndex}"]`);
     var success = false;
 
+    var timeUnitlReset = 0;
+
     while (success === false) {
 
         success = true;
@@ -73,6 +75,14 @@ function create_fillInGrid(gridIndex) {
                 field_resetField(e);
             });
         }
+
+        timeUnitlReset++;
+
+        if (timeUnitlReset > 30) {
+            setTimeout(function(){ hardReset(); }, 100);
+            break;
+        }
+
     }
 
 }
