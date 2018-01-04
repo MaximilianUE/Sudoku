@@ -6,8 +6,6 @@ var random;
 
 var deathClock = 0;
 
-const field = document.querySelectorAll('.field');
-
 function createGame() {
 
     hardReset();
@@ -25,13 +23,14 @@ function createGame() {
 
 function fillTest() {
 
-    for (var i = 1; i <= 10; i++) {
-
+    for (var i = 0; i < 10; i++) {
+        create_deleteOneRandomField();
     }
 }
 
 //check if solvable
 function create_checkIfSolveable() {
+    resetGame();
     solveGame();
     deathClock++;
 
@@ -41,6 +40,7 @@ function create_checkIfSolveable() {
 
         if (solved === true) {
             console.log("🎉");
+            create_resetAllFields();
         }
 
         else if (deathClock > 1000) {
@@ -98,7 +98,7 @@ function create_fillInGrid(gridIndex) {
         timeUnitlReset++;
 
         if (timeUnitlReset > 30) {
-            setTimeout(function(){ hardReset(); }, 1);
+            setTimeout(function(){ hardReset(); }, 100);
             break;
         }
 
@@ -106,27 +106,42 @@ function create_fillInGrid(gridIndex) {
 
 }
 
-function create_fillOneRandomField() {
+function create_deleteOneRandomField() {
 
-    const emptyField = document.querySelectorAll('.field.isEmpty');
+    const field = document.querySelectorAll('.field:not(.wasEmpty)');
 
-    if (emptyField.length !== 0) {
+    //choose random field
+    randomField = Math.floor(Math.random() * field.length);
 
-        randomEmptyField = Math.floor(Math.random() * emptyField.length);
+    //if field is not empty
 
-        //check single field
-        field_getIndex(emptyField[randomEmptyField]);
-        field_getAllValues();
-        field_getAllPossibleValues(); //returns => field_PossibleValues
+        value = field[randomField].value;
 
-            randomNumber = Math.floor(Math.random() * field_PossibleValues.length);
+        field[randomField].value = "";
 
-            const remove = grid_PossibleValues.indexOf(randomNumber);
-            removeMe = field_PossibleValues.splice(remove, 1);
 
-            emptyField[randomEmptyField].value = removeMe;
-            emptyField[randomEmptyField].classList.remove('isEmpty');
+        if ( create_checkIfSolvable(field[randomField]) ) {
+            field[randomField].classList.add('wasEmpty');
+        }
+        else {
+            field[randomField].value = value;
+            console.log("sorry bro");
+        }
+}
 
-            solve_checkIfSolvable(emptyField[randomEmptyField]);
-    }
+function create_checkIfSolvable(field) {
+    field_getIndex(field);
+    field_getAllValues();
+    field_getAllPossibleValues(); //returns => field_PossibleValues
+    return (field_PossibleValues.length === 1);
+}
+
+function create_resetAllFields() {
+
+    const field = document.querySelectorAll('.field');
+
+    field.forEach( function (e) {
+        e.style.backgroundColor = "white";
+        e.classList.remove('wasEmpty');
+    });
 }
